@@ -1106,7 +1106,7 @@ data "aws_iam_policy_document" "elb_logs" {
     ]
 
     resources = [
-      "arn:${local.partition}:s3:::${module.this.id}-eb-loadbalancer-logs/*"
+      "arn:${local.partition}:s3:::${module.this.id}-eblogs/*"
     ]
 
     principals {
