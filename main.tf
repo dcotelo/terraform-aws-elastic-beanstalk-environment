@@ -1089,6 +1089,12 @@ resource "aws_elastic_beanstalk_environment" "default" {
       resource  = ""
     }
   }
+  lifecycle {
+    ignore_changes = [
+      # ignore solution_stack_name to avoid drift on minor version update
+      solution_stack_name
+    ]
+  }
 }
 
 data "aws_elb_service_account" "main" {
